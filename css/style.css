@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F9F9F9; /* Light Grey Background */
+    color: #333333; /* Dark Grey Text */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #A2D5F2; /* Sky Blue Header */
+    color: #333333;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header nav a {
+    color: #333333;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+    color: #F6D365; /* Gold Accent on Hover */
+}
+
+main {
+    background-color: #FFFFFF; /* White Content Box */
+    padding: 30px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #A2D5F2; /* Same as Header Sky Blue */
+    color: #333333;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    border-top: 2px solid #F6D365; /* Gold Accent Line */
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #F6D365; /* Gold Header for Tables */
+    color: #333333;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], input[type="date"], select {
+    width: 60%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #A2D5F2; /* Sky Blue Button */
+    color: #333333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #90C4E4; /* Slightly Deeper Sky Blue Hover */
+}
