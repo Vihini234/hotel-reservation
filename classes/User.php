@@ -42,5 +42,35 @@ class User {
         }
         return false;
     }
+
+    public function setRememberToken($userId, $token) {
+        $hashedToken = password_hash($token, PASSWORD_DEFAULT);
+        $query = "UPDATE users SET remember_token = :token WHERE id = :user_id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":token", $hashedToken);
+        $stmt->bindParam(":user_id", $userId);
+        return $stmt->execute();
+    }
+
+    public function getUserByRememberToken($token) {
+        $query = "SELECT * FROM users WHERE remember_token IS NOT NULL";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($users as $user) {
+            if (password_verify($token, $user['remember_token'])) {
+                return $user;
+            }
+        }
+        return false;
+    }
+
+    public function clearRememberToken($userId) {
+        $query = "UPDATE users SET remember_token = NULL WHERE id = :user_id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(":user_id", $userId);
+        return $stmt->execute();
+    }
 }
 ?>
